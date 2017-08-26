@@ -17,6 +17,16 @@
 						<div class="row">
 							<div class="col-lg-12">
 								<?php echo form_open('login'); ?>
+                                                                        <div class="form-group">
+                                                                            <div class="btn-group" data-toggle="buttons">
+                                                                                <label class="btn btn-primary active">
+                                                                                  <input type="radio" name="type" id="type1" value="1" autocomplete="off" checked> Admin
+                                                                                </label>
+                                                                                <label class="btn btn-primary">
+                                                                                  <input type="radio" name="type" id="type2" value="2" autocomplete="off"> Patient
+                                                                                </label>
+                                                                            </div>
+									</div>
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
@@ -72,6 +82,6 @@
 			</div>
 		</div>
 	</div>
-	<link href="/assets/css/login.css" rel="stylesheet">
-	<script src="/assets/js/login.js"></script>
+	<link href="<?php echo base_url(); ?>/assets/css/login.css" rel="stylesheet">
+	<script src="<?php echo base_url(); ?>/assets/js/login.js"></script>
 	

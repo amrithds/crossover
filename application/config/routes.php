@@ -41,7 +41,7 @@
 $route['admin/reportComponents'] = 'admin/getReportComponents';
 $route['admin/reports'] = "admin/addReports";
 $route['admin'] = "admin";
-$route['login'] = "login/loginAdmin";
+$route['login'] = "login/loginUsers";
 $route['register'] = "login/register";
 $route['home/verifyEmailId'] = "home/verifyEmailId/$1";
 $route['default_controller'] = "home";

@@ -77,4 +77,30 @@ class Patients_model extends CI_Model {
 		$this->db->where('id', $id);
 		return $this->db->delete('news');
 	}
+        
+        /**
+	 * function to validate login credentials
+	 * @param string $email
+	 * @param string $password
+	 * @return resultset|boolean
+	 */
+	public function login($email, $password) {
+		$this->db->select ( 'id, email, first_name, last_name' );
+		$criteria = array (
+				'email' => $email,
+				'password' => md5 ( $password ) 
+		);
+		$this->db->from ( 'users' );
+		$this->db->where ( $criteria );
+		$this->db->limit ( 1 );
+		
+		$query = $this->db->get ();
+		
+		if ($query->num_rows () == 1) {
+			$res = $query->result ();
+			return $res [0];
+		} else {
+			return false;
+		}
+	}
 }
