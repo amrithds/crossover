@@ -6,7 +6,7 @@
 <div class="row">
 
 	<p></p>
-	<h1>Patient List</h1>
+	<h1>Patient Report</h1>
 	<div class="col-md-10 col-md-offset-1">
 
 		<div class="panel panel-default panel-table">
@@ -14,10 +14,6 @@
 				<div class="row">
 					<div class="col col-xs-6">
 						<h3 class="panel-title">Patients</h3>
-					</div>
-					<div class="col col-xs-6 text-right">
-						<button type="button" class="btn btn-sm btn-primary btn-create">Create
-							New</button>
 					</div>
 				</div>
 			</div>
@@ -35,25 +31,16 @@
                                                         <th>Updated At</th>
 						</tr>
 					</thead>
-					<tfoot>
-						<tr>
-							<th>Id</th>
-							<th>Report Name</th>
-							<th>Doctor Name</th>
-							<th>Suggestions</th>
-							<th>Created At</th>
-                                                        <th>Updated At</th>
-						</tr>
-					</tfoot>
+					
 					<tbody>
 					<?php foreach($patientReports as $report){?>
 						<tr>
-							<td class="hidden-xs"><?php echo $report['id'] ?></td>
-							<td><?php echo $report['name'] ?></td>
-							<td><?php echo $report['doctor_name'] ?></td>
-							<td><?php echo $report['suggestions'] ?></td>
-							<td><?php echo $report['created_at'] ?></td>
-							<td><?php echo $report['updated_at'] ?></td>
+							<td class="hidden-xs"><?php echo $report->id ?></td>
+							<td><?php echo $report->name ?></td>
+							<td><?php echo $report->doctor_name ?></td>
+							<td><?php echo $report->suggestions ?></td>
+							<td><?php echo $report->created_at ?></td>
+							<td><?php echo $report->updated_at ?></td>
 						</tr>
 					<?php }?>
 

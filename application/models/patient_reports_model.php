@@ -11,7 +11,7 @@ class Patient_reports_model extends CI_Model{
                     . "FROM patient_reports p "
                     . "JOIN reports r ON r.id= p.report_id "
                     . "WHERE p.patient_id =".$patientId);
-            return $query->row_array();
+            return $query->result();
         }
     }
 }

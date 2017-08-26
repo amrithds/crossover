@@ -5,7 +5,7 @@
  * @author damrith
  * Pathology admin related activities
  */
-class Patient extends CI_Controller
+class Patient extends Base_controller
 {
 
     public function __construct()
