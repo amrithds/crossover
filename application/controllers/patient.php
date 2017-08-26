@@ -12,6 +12,7 @@ class Patient extends CI_Controller
     {
         parent::__construct();
         $this->load->model('patients_model', 'patients');
+        $this->load->model('patient_reports_model', 'reports');
     }
 
     /**
@@ -22,10 +23,9 @@ class Patient extends CI_Controller
     {
         
         $this->load->library('pagination');
-        
-        $this->data['patients'] = $this->patients->getPatients();
-        
-        $this->templateResponse('admin/index');
+        $sessionDetails =  $this->session->userdata('logged_in');
+        $this->data['patientReports'] = $this->reports->getPatientsReports($sessionDetails['id']);
+        $this->templateResponse('patient/index');
     }
 
     /**
