@@ -53,6 +53,7 @@ class Admin extends Admin_Controller
     {
         $this->load->model('report_components_model', 'report_components');
         
+        $dd;
         $required_columns = 'id,name';
         $criteria = array(
             'report_id' => $reportId
